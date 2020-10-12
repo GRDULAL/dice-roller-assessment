@@ -1,25 +1,24 @@
+
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dice Roller</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <main>
-      <h2>Dice Roller</h2>
-      <div id="userInput">
-        <label for="number">Enter a number of rolls: </label>
-        <input id="num" type="number" placeholder="Dice Frequency" />
-        <button id="roll">Roll</button>
-      </div>
-      <div id="results">
-        <p>Total: <span id="result"></span></p>
-        <button id="showRoll">Show All Rolls</button>
-      </div>
-      <div id="lists"></div>
-    </main>
-    <script src="main.js"></script>
-  </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css"/>
+    <title>Document</title>
+</head>
+<body>
+    <h3>Dice Roller</h3>
+    <label for= "number">Enter a number of dice:</label>
+    <input type="text" id="number-of-dice" name="name" required
+       minlength="8" maxlength="12" size="20">
+       <button class="Roll">Rolls</button>
+       <div id=total>Total: __</div>
+       <button id="reset-button">RESET</button><br>
+       <button class="showallrolls">Show All Rolls</button>
+       <div id="lists"></div>
+
+       
+<script src="./main.js"></script>
+</body>
 </html>

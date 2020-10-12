@@ -1,26 +1,36 @@
-let roll = document.querySelector("#roll");
-let totalResult = document.querySelector("#result");
-let showRolls = document.querySelector("#showRoll");
+
+let roll = document.querySelector(".Roll");
+let totalresult = document.querySelector("#total");
+let showtherolls = document.querySelector(".showallrolls");
 let lists = document.querySelector("#lists");
-roll.addEventListener("click", function () {
-  let dieRolls = [];
-  let userInput = document.querySelector("#num").value;
-  let num = 0;
-  let total = 0;
-  while (num < userInput) {
-    let x = Math.floor(Math.random() * 6) + 1;
-    dieRolls.push(x);
-    total += dieRolls[num];
-    num += 1;
-  }
-  totalResult.innerHTML = total;
-  console.log(dieRolls);
-  showRolls.addEventListener("click", function () {
+let numofdice = document.querySelector("#number-of-dice");
+let numberofresets = document.querySelector("#reset-button");
+let dierolls = [];
+roll.addEventListener("click", function(){
+let dicenum = numofdice.value 
+let total = 0;
+let counter = 0;
+while (counter<dicenum) {
+    let x = Math.floor(Math.random()*6 +1)
+    dierolls.push(x)
+    total +=x
+    counter ++
+}
+totalresult.innerHTML=total
+})
+
+showtherolls.addEventListener("click", function(){
     str = "<ol>";
-    dieRolls.forEach(function (die) {
-      str += "<li>" + die + "</li>";
+    dierolls.forEach(function (dicenum){
+        str += "<li>" + dicenum + "</li>";
     });
-    str += "</ol>";
-    lists.innerHTML = str;
-  });
+    str +="</ol>";
+    lists.innerHTML=str
 });
+numberofresets.addEventListener("click", function() {
+    
+    totalresult.innerHTML = 0;
+    numofdice.value =0;
+    lists.innerHTML = '';
+    
+})
